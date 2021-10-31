@@ -1,0 +1,24 @@
+.cards__like-button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url(../../../images/Like-heart.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  width: 22px;
+  height: 19px;
+  transition: opacity 0.5s linear;
+}
+
+.cards__like-button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.cards__like-button:active {
+  background-image: url(../../../images/Like-heart-active.svg);
+}

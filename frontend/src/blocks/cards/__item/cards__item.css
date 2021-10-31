@@ -1,0 +1,9 @@
+.cards__item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+  max-width: 100%;
+}

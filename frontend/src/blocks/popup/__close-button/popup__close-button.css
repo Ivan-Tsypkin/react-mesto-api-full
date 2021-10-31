@@ -1,0 +1,36 @@
+@keyframes rotation {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(225deg);
+  }
+}
+
+.popup__close-button {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  right: -40px;
+  top: -40px;
+  background: url(../../../images/Close-Icon.svg) center /cover transparent no-repeat;
+  transform: rotate(45deg);
+  transition: opacity 0.5s linear;
+}
+
+.popup__close-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  animation: rotation 1s ease-in-out;
+}
+
+@media screen and (max-width: 618px) {
+  .popup__close-button {
+    width: 26px;
+    height: 26px;
+    right: 5px;
+  }
+}

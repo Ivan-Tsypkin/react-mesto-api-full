@@ -1,0 +1,8 @@
+.cards__image {
+  display: flex;
+  object-fit: cover;
+  height: 282px;
+  width: 100%;
+  cursor: pointer;
+  flex-shrink: 1;
+}

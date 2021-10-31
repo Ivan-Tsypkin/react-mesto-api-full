@@ -1,0 +1,15 @@
+.profile__info {
+  position: relative;
+  margin-left: 30px;
+  max-width: calc(100% - 300px);
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 618px) {
+  .profile__info {
+    z-index: 1;
+    margin: 0 0 0 0;
+    margin-top: 26px;
+    max-width: calc(100% - 40px);
+  }
+}

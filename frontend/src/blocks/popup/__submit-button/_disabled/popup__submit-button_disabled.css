@@ -1,0 +1,7 @@
+.popup__submit-button_disabled {
+  background-color: #fff;
+  color: black;
+  opacity: 0.2;
+  border: 1px solid black;
+  pointer-events: none; /* Отменяем hover по неактивной кнопке*/
+}
