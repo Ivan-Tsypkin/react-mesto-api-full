@@ -18,10 +18,19 @@ const pageNotFoundError = new CustomError(404, 'Запрашиваемый ре�
 
 const { PORT = 3005 } = process.env;
 const app = express();
-app.use(cors({
+
+const options = {
+  origin: [
+    'http://localhost:3000',
+  ],
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
   credentials: true,
-  origin: 'http://localhost:3000',
-}));
+};
+
+app.use(cors(options));
 app.use(cookieParser());
 app.use(helmet());
 app.use(express.json());
