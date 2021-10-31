@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const { celebrate, Joi } = require('celebrate');
 const { errors } = require('celebrate');
+require('dotenv').config();
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 const { createUser, loginUser } = require('./controllers/users');
