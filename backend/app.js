@@ -21,7 +21,7 @@ const app = express();
 
 const options = {
   origin: [
-    'http://89.109.45.67:3000',
+    'http://localhost:3000',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
