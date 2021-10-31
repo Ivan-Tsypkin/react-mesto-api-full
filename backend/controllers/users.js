@@ -41,7 +41,7 @@ module.exports.loginUser = (req, res, next) => {
           maxAge: 3600000 * 24 * 7,
           httpOnly: true,
           sameSite: 'none',
-          secure: true,
+          secure: false,
         })
         .send({ message: 'Вход выполнен!' });
     })
