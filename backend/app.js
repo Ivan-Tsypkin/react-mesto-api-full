@@ -23,7 +23,7 @@ const options = {
   origin: [
     'http://localhost:3000',
   ],
-  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  methods: ['GET', 'PUT', 'PATCH', 'HEAD', 'POST', 'DELETE'],
   preflightContinue: false,
   optionsSuccessStatus: 204,
   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
