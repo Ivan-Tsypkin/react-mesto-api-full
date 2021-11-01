@@ -102,7 +102,7 @@ class Api {
 }
 
 const configApi = {
-  baseUrl: 'http://localhost:3005',
+  baseUrl: 'https://api.antares.nomoredomains.xyz',
   headers: {
     /* authorization: 'a37d820a-4f35-49a2-9bb2-cba80f833b0c', */
     'Content-Type': 'application/json'
