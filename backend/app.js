@@ -23,6 +23,7 @@ const options = {
   origin: [
     'http://localhost:3000',
     'https://antares.nomoredomains.xyz',
+    'http://antares.nomoredomains.xyz',
   ],
   methods: ['GET', 'PUT', 'PATCH', 'HEAD', 'POST', 'DELETE'],
   optionsSuccessStatus: 204,
