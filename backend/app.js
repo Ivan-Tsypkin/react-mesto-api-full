@@ -25,7 +25,6 @@ const options = {
     'https://antares.nomoredomains.xyz',
   ],
   methods: ['GET', 'PUT', 'PATCH', 'HEAD', 'POST', 'DELETE'],
-  preflightContinue: false,
   optionsSuccessStatus: 204,
   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
   credentials: true,
