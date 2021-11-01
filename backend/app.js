@@ -22,6 +22,7 @@ const app = express();
 const options = {
   origin: [
     'http://localhost:3000',
+    'https://antares.nomoredomains.xyz',
   ],
   methods: ['GET', 'PUT', 'PATCH', 'HEAD', 'POST', 'DELETE'],
   preflightContinue: false,
