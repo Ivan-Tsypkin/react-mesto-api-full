@@ -17,8 +17,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const pageNotFoundError = new CustomError(404, 'Запрашиваемый ресурс не найден', 'pageNotFoundError');
 
 const { PORT = 3005 } = process.env;
-const { JWT_SECRET = 'qwertyasdfgh' } = process.env;
-console.log(JWT_SECRET);
+
 const app = express();
 
 const options = {
