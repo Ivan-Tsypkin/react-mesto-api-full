@@ -3,6 +3,7 @@ const { celebrate, Joi } = require('celebrate');
 const {
   getAllUsers, getUserById, updateUserInfo, updateUserAvatar,
 } = require('../controllers/users');
+const { RegExpForUrl } = require('../REG_EXPS');
 
 router.get('/', getAllUsers);
 router.get('/me', getUserById);
@@ -20,7 +21,7 @@ router.patch('/me', celebrate({
 router.patch('/me/avatar', celebrate({
   body: Joi.object().keys({
     // eslint-disable-next-line no-useless-escape
-    avatar: Joi.string().required().pattern(new RegExp('(https?:\/\/)?(www\.)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*[\/\#]?')),
+    avatar: Joi.string().required().pattern(new RegExp(`${RegExpForUrl}`)),
   }),
 }), updateUserAvatar);
 

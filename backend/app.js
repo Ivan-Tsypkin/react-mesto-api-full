@@ -13,6 +13,7 @@ const { createUser, loginUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const CustomError = require('./errors/CustomError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { errorReceiver } = require('./middlewares/errorReceiver');
 
 const pageNotFoundError = new CustomError(404, 'Запрашиваемый ресурс не найден', 'pageNotFoundError');
 
@@ -47,6 +48,7 @@ app.get('/crash-test', () => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
+
 app.post('/signup', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
@@ -57,6 +59,7 @@ app.post('/signup', celebrate({
     avatar: Joi.string().pattern(new RegExp('^(https?:\/\/)?(www\.)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*[\/\#]?$')),
   }),
 }), createUser);
+
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
@@ -67,27 +70,19 @@ app.post('/signin', celebrate({
 app.get('/signout', (req, res) => {
   res.status(200).clearCookie('jwt').send({ message: 'Выход' });
 });
+
 app.use('/users', auth, usersRouter);
 app.use('/cards', auth, cardsRouter);
+
 app.get('*', (req, res, next) => {
   next(pageNotFoundError);
 });
 
 app.use(errorLogger);
-app.use(errors());
-// eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
-  const { statusCode = 500, message } = err;
-  console.log(`Error:${err.name}`);
 
-  return res
-    .status(statusCode)
-    .send({
-      message: statusCode === 500
-        ? 'На сервере произошла ошибка'
-        : message,
-    });
-});
+app.use(errors());
+
+app.use(errorReceiver);
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);

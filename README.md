@@ -25,5 +25,6 @@
 
 Сервер разработан с помощью фреймфорка `Express`.
 
-Ссылка: https://antares.nomoredomains.xyz/
-IP-адрес: 178.154.224.72
+* Ссылка: https://antares.nomoredomains.xyz/
+* Ссылка на сервер: https://api.antares.nomoredomains.xyz/
+* IP-адрес: 178.154.224.72
